@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/wave_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Capa de fondo sólido azul -->
+    <item>
+        <shape>
+            <solid android:color="#576F92" />
+        </shape>
+    </item>
+    
+    <!-- Capa de la onda blanca -->
+    <item android:gravity="bottom">
+        <vector xmlns:android="http://schemas.android.com/apk/res/android"
+            android:width="1440dp"
+            android:height="85dp"
+            android:viewportWidth="1440"
+            android:viewportHeight="170">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M0,96L40,101.3C80,107,160,117,240,133.3C320,149,400,171,480,170.7C560,171,640,149,720,128C800,107,880,85,960,90.7C1040,96,1120,128,1200,128C1280,128,1360,96,1400,80L1440,64L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z" />
+        </vector>
+    </item>
+</layer-list>

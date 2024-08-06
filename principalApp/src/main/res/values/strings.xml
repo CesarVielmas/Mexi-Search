@@ -1,0 +1,34 @@
+<!-- strings.xml -->
+<resources>
+    <!-- Principal -->
+    <string name="app_name">MyApp</string>
+    <string name="principal_tittle_login1">BUSQUEDAS A GRAN ESCALA</string>
+    <string name="principal_tittle_login2">EMPRESAS DEDICADAS</string>
+    <string name="principal_tittle_login3">FACIL Y RAPIDO</string>
+    <string name="principal_tittle_login4">FACILIDAD EN TRANSLADO</string>
+    <string name="principal_tittle_login5">ENTREGAS A TIEMPO</string>
+    <string name="principal_tittle_login_cont">Inicie Sesion Para Continuar</string>
+    <string name="principal_text_mail">CORREO ELECTRONICO</string>
+    <string name="principal_input_mail">ejemplo@hotmail.com</string>
+    <string name="principal_text_password">CONTRASEÑA</string>
+    <string name="principal_input_password">*********</string>
+    <string name="principal_text_phone">Numero Telefonico</string>
+
+    <string name="principal_button_sesion_login">INICIAR SESION</string>
+    <string name="principal_button_sesion_google">CONTINUAR CON GOOGLE</string>
+    <string name="principal_text_register">¿No Tiene Niguna Cuenta?</string>
+    <!-- Registro -->
+     <string name="register_tittle">COMENZAR REGISTRO</string>
+     <string name="register_second_tittle">Notas Antes De Comenzar</string>
+     <string name="register_second_tittle_label_first">1- Asegurese de no haberse registrado con anterioridad con el correo electronico , si ese es el caso entonces procure obtener una nueva contraseña para su cuenta en el apartado de inicio de sesion</string>
+     <string name="register_second_tittle_label_second">2- Procure de no olvidar su cuenta, es posible recuperarla , pero el trabajo podria variar en algunas ocaciones cuando se detecten varias recuperaciones de una misma cuenta por seguridad</string>
+     <string name="register_second_tittle_label_third">3- Considere el uso de una sola cuenta para evitar conflictos futuros con alguna problematica dentro de la aplicacion</string>
+     <string name="register_button_continue">Continuar</string>
+
+     <string name="register_tittle_second">Paso 1 | Paso 5</string>
+     <string name="register_holder_name">Ingrese Su Nombre Completo</string>
+     <string name="register_tittle_name">¿CUAL ES SU NOMBRE?</string>
+
+     <string name="register_tittle_third">Paso 2 | Paso 5</string>
+
+</resources>

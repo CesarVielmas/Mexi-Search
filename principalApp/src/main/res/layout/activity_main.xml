@@ -1,0 +1,153 @@
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayoutPrincipalParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    >
+    <FrameLayout
+    android:id="@+id/frameLayoutContainer"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+
+    <!-- LinearLayout principal con fondo azul y otros elementos -->
+    <LinearLayout
+        android:id="@+id/linearLayoutWave"
+        style="@style/PrincipalLinearLayoutWave"
+        >
+
+        <!-- Aquí van los elementos actuales del LinearLayout -->
+        <ImageView
+            android:id="@+id/mi_imageview"
+            android:layout_width="300dp"
+            android:layout_height="230dp"
+            android:layout_marginTop="-50dp"
+            android:src="@mipmap/example_logo" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/principal_tittle_login1"
+            style="@style/TittlePrincipal" />
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/backgroundAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:alpha="0.085"
+         />
+    <ImageView
+        android:id="@+id/waveImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:src="@drawable/frame_layout_wave"
+        android:scaleType="fitXY" />
+
+</FrameLayout>
+    <LinearLayout style="@style/TittlePrincipal_linear">
+        <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/principal_tittle_login_cont"
+        style= "@style/TittlePrincipal_cont"
+        />
+    </LinearLayout>
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:gravity="start">
+    <LinearLayout android:id="@+id/linearLayout2" style="@style/TittlePrincipal_linear">
+
+        <EditText
+        android:id="@+id/inputText1"
+        android:hint="@string/principal_input_mail"
+        style="@style/PrincipalInput"
+        />
+       
+        <EditText
+        android:id="@+id/inputText2"
+        android:hint="@string/principal_input_password"
+        android:inputType="textPassword"
+        style="@style/PrincipalInput" 
+        />
+        <Button
+        android:id="@+id/buttonView1"
+        android:text="@string/principal_button_sesion_login"
+        style="@style/PrincipalButtonSesion">
+
+        </Button>
+        <Button
+        android:id="@+id/buttonView2"
+        android:text="@string/principal_button_sesion_google"
+        style="@style/PrincipalButtonSesionGoogle">
+            
+        </Button>
+        <TextView
+        android:id="@+id/textView5"
+        android:text="@string/principal_text_register"
+        style="@style/PrincipalTextRegister">
+
+        </TextView>
+       <LinearLayout
+        android:id="@+id/linearLayoutImages"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:gravity="center">
+            <ImageView
+            android:id="@+id/myImageViewFB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_weight="1.12"
+            android:src="@mipmap/social_media_facebook" />
+            <ImageView
+            android:id="@+id/myImageViewGIT"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_weight="1"
+            android:src="@mipmap/social_media_git" />
+            <ImageView
+            android:id="@+id/myImageViewIG"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_weight="1"
+            android:src="@mipmap/social_media_instagram" />
+            <ImageView
+            android:id="@+id/myImageViewX"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="13dp"
+            android:layout_marginStart="13dp"
+            android:src="@mipmap/social_media_x" />
+       </LinearLayout>
+    </LinearLayout>
+            <TextView
+            android:id="@+id/textView3"
+            android:text="@string/principal_text_mail"
+            style="@style/PrincipalText">
+        
+            </TextView>
+            <TextView
+            android:id="@+id/textView4"
+            android:text="@string/principal_text_password"
+            style="@style/PrincipalText">
+
+            </TextView>
+    </RelativeLayout>
+    
+</LinearLayout>

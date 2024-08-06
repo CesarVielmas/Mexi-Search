@@ -1,0 +1,35 @@
+<!-- AndroidManifest.xml -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icono"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icono"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity2" android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".RegisterActivity3" android:windowSoftInputMode="adjustPan"></activity>
+        <!-- Otros componentes de la aplicación (servicios, receptores, etc.) -->
+
+    </application>
+
+    <!-- Permisos requeridos, configuraciones de hardware, etc. -->
+
+</manifest>
