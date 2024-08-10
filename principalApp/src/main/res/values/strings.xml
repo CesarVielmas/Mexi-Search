@@ -30,5 +30,27 @@
      <string name="register_tittle_name">¿CUAL ES SU NOMBRE?</string>
 
      <string name="register_tittle_third">Paso 2 | Paso 5</string>
+     <string name="register_holder_date">Ingrese Su Fecha De Nacimiento</string>
+     <string name="register_tittle_date">¿CUAL ES SU FECHA DE NACIMIENTO?</string>
 
+     <string name="register_tittle_fourth">Paso 3 | Paso 5</string>
+     <string name="register_tittle_password">ESTABLEZCA SU CONTRASEÑA</string>
+     <string name="register_warning_password_empty">La Contraseña Debe Ser De Minimo 8 Caracteres</string>
+     <string name="register_warning_password_incorrect">La Contraseña No Es Valida</string>
+     <string name="register_warning_password_correct">La Contraseña Es Valida</string>
+
+     <string name="register_tittle_fifth">Paso 4 | Paso 5</string>
+     <string name="register_tittle_mail">CORREO ELECTRONICO</string>
+     <string name="register_tittle_phone">NUMERO TELEFONICO</string>
+     <string name="register_holder_mail">Ingrese Aqui Su Correo Electronico</string>
+     <string name="register_holder_phone">Ingrese Aqui Su Numero Telefonico</string>
+     <string name="register_change_phone">UTILIZAR MI NUMERO TELEFONICO</string>
+     <string name="register_change_mail">UTILIZAR MI CORREO ELECTRONICO</string>
+     
+     <string name="register_tittle_six">Paso 5 | Paso 5</string>
+     <string name="register_button_finally">Confirmar</string>
+     <string name="register_tittle_finally_data">REGISTRO COMPLETO</string>
+     <string name="register_tittle_finally_name">NOMBRE COMPLETO</string>
+     <string name="register_tittle_finally_date">FECHA DE NACIMIENTO</string>
+     <string name="register_tittle_finally_password">CONTRASEÑA</string>
 </resources>

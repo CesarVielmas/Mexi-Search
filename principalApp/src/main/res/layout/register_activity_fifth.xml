@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/register_tittle_third"
+            android:text="@string/register_tittle_fifth"
             style="@style/TittleRegistro" />
     </LinearLayout>
     <ImageView
@@ -50,33 +50,49 @@
 
         <EditText
         android:id="@+id/inputTextName"
-        android:hint="@string/register_holder_date"
-        android:enabled="false" 
-        android:focusable="false"
-        android:inputType="none" 
+        android:hint="@string/register_holder_mail"
         style="@style/PrincipalInput"
         />
     </LinearLayout>
     <TextView
     android:id="@+id/textViewName"
-    android:text="@string/register_tittle_date"
+    android:text="@string/register_tittle_mail"
     style="@style/PrincipalText"
     android:layout_marginTop = "15dp"/>
+    <ImageView 
+    android:id="@+id/imageViewCorrect"
+    android:layout_width="25dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:layout_marginStart="320dp"
+    android:layout_marginTop="37dp"
+    android:src="@mipmap/check_password_empty"
+    android:scaleType="fitXY" />
     </RelativeLayout>
-    <RelativeLayout
+    
+    <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="450dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    > 
+    <LinearLayout
+    android:id="@+id/linearLayouPhone"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
     >
-        <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/composeDatePicker"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    </RelativeLayout>
+    <TextView
+    android:id="@+id/textViewChangePhone"
+    android:text="@string/register_change_phone"
+    style="@style/ChangePhone"
+    />
+    </LinearLayout>
+    </LinearLayout>
     <LinearLayout
     android:id="@+id/layoutButtonContinue"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    android:layout_marginTop="-62dp"
+    android:layout_marginTop="362dp"
     android:gravity="center">
         <Button
         android:id="@+id/buttonRegisterContinue"

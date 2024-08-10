@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/register_tittle_third"
+            android:text="@string/register_tittle_fourth"
             style="@style/TittleRegistro" />
     </LinearLayout>
     <ImageView
@@ -50,33 +50,63 @@
 
         <EditText
         android:id="@+id/inputTextName"
-        android:hint="@string/register_holder_date"
-        android:enabled="false" 
-        android:focusable="false"
-        android:inputType="none" 
+        android:hint="@string/principal_input_password"
+        android:inputType="textPassword"
         style="@style/PrincipalInput"
         />
     </LinearLayout>
     <TextView
     android:id="@+id/textViewName"
-    android:text="@string/register_tittle_date"
+    android:text="@string/register_tittle_password"
     style="@style/PrincipalText"
     android:layout_marginTop = "15dp"/>
+    <ImageView 
+    android:id="@+id/imageViewEye"
+    android:layout_width="25dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:layout_marginStart="320dp"
+    android:layout_marginTop="37dp"
+    android:src="@mipmap/password_not_view"
+    android:scaleType="fitXY"
+    />
     </RelativeLayout>
-    <RelativeLayout
+    <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="450dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
     >
-        <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/composeDatePicker"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    </RelativeLayout>
+    <LinearLayout
+    android:id="@+id/layoutWarning"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="horizontal"
+    >
+    <ImageView 
+    android:id="@+id/imageViewPassword"
+    android:layout_width="30dp"
+    android:layout_marginStart="7dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginEnd="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:src="@mipmap/check_password_empty"
+    android:scaleType="fitXY"
+    />
+    <TextView
+    android:id="@+id/textViewPassword"
+    android:layout_weight="2"
+    android:text="@string/register_warning_password_empty"
+    style="@style/WarningPassword"
+    />
+    </LinearLayout>
+    </LinearLayout>
     <LinearLayout
     android:id="@+id/layoutButtonContinue"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    android:layout_marginTop="-62dp"
+    android:layout_marginTop="340dp"
     android:gravity="center">
         <Button
         android:id="@+id/buttonRegisterContinue"

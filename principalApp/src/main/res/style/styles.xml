@@ -1,8 +1,13 @@
 <resources>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-   
-    </style>
 
+    </style>
+    <style name="AppThemeCalendar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">#000000</item>
+        <item name="materialCalendarTheme">@style/CustomMaterialDatePickerTheme</item>
+    </style>
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light">
     
     </style>
@@ -111,5 +116,36 @@
     <style name="PrincipalButtonSesionRegister" parent="PrincipalButtonSesion">
         <item name="android:textSize">17sp</item>
         <item name="android:layout_marginTop">5dp</item>
+    </style>
+    <!-- Register Activity 3-->
+   <style name="CustomMaterialDatePickerTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
+        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen</item>
+        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar</item>
+    </style>
+    <!-- Register Activity 4-->
+    <style name="WarningPassword">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:textColor">#686868</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_marginStart">14dp</item>
+        <item name="android:layout_marginTop">19dp</item>
+        <item name="android:fontFamily">@font/notosans_thin</item>
+        <item name="android:gravity">start</item>
+    </style>
+    <!-- Register Activity 5-->
+    <style name="ChangePhone">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:textColor">#bed0ff</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:fontFamily">@font/notosans_medium</item>
+        <item name="android:gravity">center</item>
     </style>
 </resources>
