@@ -48,6 +48,8 @@ class RegisterActivity5 : AppCompatActivity() {
         UtilsFunctions.setViewWidthPercentageLayout(layoutChangePhone, parentLayoutPrincipal, 90f)
         UtilsFunctions.setViewHeightPercentageFrame(frameLayoutAnimation, parentLayoutPrincipal, 25f)
         UtilsFunctions.setViewWidthPercentageButton(buttonContinue, parentLayoutPrincipal, 65f)
+        val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$".toRegex()
+        val phoneRegex = "^[+]?[(]?[0-9]{1,4}[)]?[-\\s./0-9]*$".toRegex()
         buttonExit.setOnClickListener {
             val intent = Intent(this, RegisterActivity4::class.java)
             startActivity(intent)
@@ -55,16 +57,49 @@ class RegisterActivity5 : AppCompatActivity() {
             finish()
         }
         buttonContinue.setOnClickListener {
-            val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
-            editor.putString("userRegister", editTextName.text.toString())
-            editor.apply()
-            val intent = Intent(this, RegisterActivity6::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.drawable.animate_activity_right, R.drawable.animate_activity_left)
+            if(changeToPhone){
+                if(editTextName.text.toString().length == 0){
+                    val dialog = ModalWindow4()
+                    dialog.setVariable(0)
+                    dialog.show(supportFragmentManager, "ModelWindow4")
+                }
+                else if(phoneRegex.matches(editTextName.text.toString())){
+                    val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putString("userRegister", editTextName.text.toString())
+                    editor.apply()
+                    val intent = Intent(this, RegisterActivity6::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.drawable.animate_activity_right, R.drawable.animate_activity_left)
+                }
+                else{
+                    val dialog = ModalWindow4()
+                    dialog.setVariable(1)
+                    dialog.show(supportFragmentManager, "ModelWindow4")
+                }
+            }
+            else{
+                if(editTextName.text.toString().length == 0){
+                    val dialog = ModalWindow4()
+                    dialog.setVariable(2)
+                    dialog.show(supportFragmentManager, "ModelWindow4")
+                }
+                else if(emailRegex.matches(editTextName.text.toString())){
+                    val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putString("userRegister", editTextName.text.toString())
+                    editor.apply()
+                    val intent = Intent(this, RegisterActivity6::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.drawable.animate_activity_right, R.drawable.animate_activity_left)
+                }
+                else{
+                    val dialog = ModalWindow4()
+                    dialog.setVariable(3)
+                    dialog.show(supportFragmentManager, "ModelWindow4")
+                }
+            }
         }
-        val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$".toRegex()
-        val phoneRegex = "^[+]?[(]?[0-9]{1,4}[)]?[-\\s./0-9]*$".toRegex()
         textViewChangePhone.setOnClickListener {
             if(!changeToPhone){
                 textViewName.text = getString(R.string.register_tittle_phone)

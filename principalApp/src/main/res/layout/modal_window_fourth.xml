@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearLayoutModal">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        style="@style/TittleModal" />
+
+    <ImageView
+        android:id="@+id/dialogImage"
+        style="@style/ImageModal"
+        />
+    <TextView 
+        android:id="@+id/dialogWarn"
+        style="@style/TextModal"
+    />
+    <Button
+        android:id="@+id/dialogButton"
+        style="@style/ButtonModal" />
+</LinearLayout>

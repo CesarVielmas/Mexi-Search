@@ -56,13 +56,27 @@ class RegisterActivity4 : AppCompatActivity() {
             finish()
         }
         buttonContinue.setOnClickListener {
-            val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
-            editor.putString("password", editTextName.text.toString())
-            editor.apply()
-            val intent = Intent(this, RegisterActivity5::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.drawable.animate_activity_right, R.drawable.animate_activity_left)
+            if(editTextName.text.toString().isNotEmpty()){
+                if(editTextName.text.toString().length <= 7){
+                    val dialog = ModalWindow3()
+                    dialog.setVariable(false)
+                    dialog.show(supportFragmentManager, "ModelWindow3")
+                }
+                else{
+                    val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putString("password", editTextName.text.toString())
+                    editor.apply()
+                    val intent = Intent(this, RegisterActivity5::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.drawable.animate_activity_right, R.drawable.animate_activity_left)
+                }
+            }
+            else{
+                val dialog = ModalWindow3()
+                dialog.setVariable(true)
+                dialog.show(supportFragmentManager, "ModelWindow3")
+            }
         }
         imageViewEye.setOnClickListener {
             if(!viewPassword){

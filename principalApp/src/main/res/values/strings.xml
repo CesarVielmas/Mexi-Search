@@ -53,4 +53,24 @@
      <string name="register_tittle_finally_name">NOMBRE COMPLETO</string>
      <string name="register_tittle_finally_date">FECHA DE NACIMIENTO</string>
      <string name="register_tittle_finally_password">CONTRASEÑA</string>
+
+    <!-- Modal -->
+    <string name="modal_view_tittle_first">OCURRIO UN PROBLEMA</string>
+    <string name="modal_view_tittle_exit">¿ESTA SEGURO DE SALIR?</string>
+    <string name="modal_view_tittle_confirm">¿DESEA CONTINUAR?</string>
+    <string name="modal_view_text_first">Asegurese De Llenar Correctamente Su Nombre</string>
+    <string name="modal_view_text_second">Porfavor Seleccione Una Fecha Valida</string>
+    <string name="modal_view_text_third_part_one">Asegurese De Llenar Correctamente Su Contraseña</string>
+    <string name="modal_view_text_third_part_two">Porfavor Proporcione Una Contraseña Valida</string>
+    <string name="modal_view_text_fourth_part_one">Asegurese De Llenar Correctamente Su Numero Telefonico</string>
+    <string name="modal_view_text_fourth_part_two">Porfavor Proporcione Un Numero Telefonico Valido</string>
+    <string name="modal_view_text_fourth_part_three">Asegurese De Llenar Correctamente Su Correo Electronico</string>
+    <string name="modal_view_text_fourth_part_fourth">Porfavor Proporcione Un Correo Electronico Valido</string>
+    <string name="modal_view_text_exit">Si Decide Salir Se Perderan Los Datos Ya Proporcionados Para Su Registro</string>
+    <string name="modal_view_text_confirm">Asegurese Que Los Datos Proporcionados Sean Los Correctos Para Evitar Futuras Confusiones</string>
+    <string name="modal_view_text_button_exit_accept">SALIR</string>
+    <string name="modal_view_text_button_confirm_accept">CONTINUAR</string>
+    <string name="modal_view_text_button_confirm_decline">REGRESAR</string>
+    <string name="modal_view_text_button_exit_decline">CANCELAR</string>
+    <string name="modal_view_text_button_first">ACEPTAR</string>
 </resources>

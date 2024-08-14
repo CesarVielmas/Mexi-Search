@@ -72,16 +72,26 @@ class RegisterActivity6 : AppCompatActivity() {
         UtilsFunctions.setViewWidthPercentageButton(buttonContinue, parentLayoutPrincipal, 65f)
         //mandarlo al menu principal pero despues de un aviso de que si desea regresar y perder los datos guardados
         buttonExit.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.drawable.animate_activity_out_left, R.drawable.animate_activity_out_right)
-            finish()
+            val dialog = ModalWindowExit { variableBoolean ->
+               if(variableBoolean){
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.drawable.animate_activity_out_left, R.drawable.animate_activity_out_right)
+                finish()
+               }
+            }
+            dialog.show(supportFragmentManager, "ModalWindowExit")
         }
         //Mandarlo a la aplicacion pantalla de inicio pero con el aviso de que si desea confirmar y si es asi entonces ahora otra nueva pestana para el codigo de verificacion al correo o telefono SMS dependiendo de lo elegido , el cual va a poder saltar pero lo pedira dentro de la app si desea proseguir
         buttonContinue.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            val dialog = ModalWindowConfirm { variableBoolean ->
+                if(variableBoolean){
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+             }
+             dialog.show(supportFragmentManager, "ModalWindowConfirm")
         }
     }
 }

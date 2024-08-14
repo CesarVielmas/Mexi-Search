@@ -47,6 +47,11 @@ class RegisterActivity2 : AppCompatActivity() {
             finish()
         }
         buttonContinue.setOnClickListener {
+            if(editTextName.text.toString() == ""){
+                val dialog = ModalWindow1()
+                dialog.show(supportFragmentManager, "ModelWindow1")
+            }
+            else{
             val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
             val editor = sharedPreferences.edit()
             editor.putString("username", editTextName.text.toString())
@@ -54,6 +59,7 @@ class RegisterActivity2 : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity3::class.java)
             startActivity(intent)
             overridePendingTransition(R.drawable.animate_activity_right, R.drawable.animate_activity_left)
+            }
         }
         editTextName.setOnFocusChangeListener { _, hasFocus ->
             val valueInDp = TypedValue.applyDimension(

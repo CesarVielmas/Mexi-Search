@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearLayoutModal">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        style="@style/TittleModal"
+        android:background="#16991E"
+        android:text="@string/modal_view_tittle_confirm" />
+
+    <ImageView
+        android:id="@+id/dialogImage"
+        style="@style/ImageModal"
+        android:src="@mipmap/modal_confirm"
+        />
+    <TextView 
+        android:id="@+id/dialogWarn"
+        style="@style/TextModal"
+        android:text="@string/modal_view_text_confirm"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+    >
+    <Button
+        android:id="@+id/dialogButtonConfirm"
+        style="@style/ButtonModal"
+        android:background="#16991E"
+        android:layout_marginStart="15dp"
+        android:text="@string/modal_view_text_button_confirm_accept" />
+    <Button
+        android:id="@+id/dialogButtonCancel"
+        style="@style/ButtonModal"
+        android:layout_marginStart="15dp"
+        android:background="#8B0909"
+        android:text="@string/modal_view_text_button_confirm_decline" />
+    </LinearLayout>
+</LinearLayout>

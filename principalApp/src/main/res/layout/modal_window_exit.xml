@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearLayoutModal">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        style="@style/TittleModal"
+        android:text="@string/modal_view_tittle_exit" />
+
+    <ImageView
+        android:id="@+id/dialogImage"
+        style="@style/ImageModal"
+        android:src="@mipmap/modal_exit"
+        />
+    <TextView 
+        android:id="@+id/dialogWarn"
+        style="@style/TextModal"
+        android:text="@string/modal_view_text_exit"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+    >
+    <Button
+        android:id="@+id/dialogButtonExit"
+        style="@style/ButtonModal"
+        android:background="#8B0909"
+        android:layout_marginStart="15dp"
+        android:text="@string/modal_view_text_button_exit_accept" />
+    <Button
+        android:id="@+id/dialogButtonCancel"
+        style="@style/ButtonModal"
+        android:layout_marginStart="15dp"
+        android:text="@string/modal_view_text_button_exit_decline" />
+    </LinearLayout>
+</LinearLayout>

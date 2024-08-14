@@ -11,6 +11,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.ui.platform.ComposeView
 import android.content.Intent
 import android.widget.TextView
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.time.temporal.ChronoUnit
+import java.util.Locale
+import java.time.Period
+
 
 class RegisterActivity3 : AppCompatActivity() {
 
@@ -41,13 +47,23 @@ class RegisterActivity3 : AppCompatActivity() {
             finish()
         }
         buttonContinue.setOnClickListener {
-            val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
-            editor.putString("birthdate", editTextName.text.toString())
-            editor.apply()
-            val intent = Intent(this, RegisterActivity4::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.drawable.animate_activity_right, R.drawable.animate_activity_left)
+            if(editTextName.text.toString().isNotEmpty()){
+                val fechaNac = editTextName.text.toString().split("/").last().trim().toInt()
+                val age = Period.between(LocalDate.of(fechaNac, 1, 1),LocalDate.now()).years
+                if(age <= 17 || age >=100){
+                    val dialog = ModalWindow2()
+                    dialog.show(supportFragmentManager, "ModelWindow2")
+                }
+                else{
+                    val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putString("birthdate", editTextName.text.toString())
+                    editor.apply()
+                    val intent = Intent(this, RegisterActivity4::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.drawable.animate_activity_right, R.drawable.animate_activity_left)
+                }
+            }
         }
 
         val composeView: ComposeView = findViewById(R.id.composeDatePicker)
