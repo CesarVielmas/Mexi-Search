@@ -48,6 +48,18 @@ class RegisterActivity5 : AppCompatActivity() {
         UtilsFunctions.setViewWidthPercentageLayout(layoutChangePhone, parentLayoutPrincipal, 90f)
         UtilsFunctions.setViewHeightPercentageFrame(frameLayoutAnimation, parentLayoutPrincipal, 25f)
         UtilsFunctions.setViewWidthPercentageButton(buttonContinue, parentLayoutPrincipal, 65f)
+
+        val valueInDp =
+                TypedValue.applyDimension(
+                                TypedValue.COMPLEX_UNIT_DIP,
+                                0.91f,
+                                resources.displayMetrics
+                        )
+                        .toInt()
+        var background = textViewName.background as GradientDrawable
+        background.setStroke(valueInDp, Color.parseColor("#D7D7D7"))
+        textViewName.setTextColor(Color.parseColor("#939393"))
+        
         val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$".toRegex()
         val phoneRegex = "^[+]?[(]?[0-9]{1,4}[)]?[-\\s./0-9]*$".toRegex()
         buttonExit.setOnClickListener {

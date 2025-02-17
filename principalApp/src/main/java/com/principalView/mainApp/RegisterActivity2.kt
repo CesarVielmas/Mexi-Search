@@ -40,6 +40,17 @@ class RegisterActivity2 : AppCompatActivity() {
         UtilsFunctions.setViewHeightPercentageLayout(parentLayoutWave, parentLayoutPrincipal, 15f)
         UtilsFunctions.setViewHeightPercentageFrame(frameLayoutAnimation, parentLayoutPrincipal, 25f)
         UtilsFunctions.setViewWidthPercentageButton(buttonContinue, parentLayoutPrincipal, 65f)
+        val valueInDp =
+                TypedValue.applyDimension(
+                                TypedValue.COMPLEX_UNIT_DIP,
+                                0.91f,
+                                resources.displayMetrics
+                        )
+                        .toInt()
+        var background = textViewName.background as GradientDrawable
+        background.setStroke(valueInDp, Color.parseColor("#D7D7D7"))
+        textViewName.setTextColor(Color.parseColor("#939393"))
+
         buttonExit.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)

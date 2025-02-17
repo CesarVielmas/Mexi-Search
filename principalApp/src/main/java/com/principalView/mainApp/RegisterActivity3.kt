@@ -1,6 +1,5 @@
 package com.example.principalApp
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -11,6 +10,10 @@ import android.widget.TextView
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.platform.ComposeView
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
+import android.util.TypedValue
+import android.content.Intent
 import java.time.LocalDate
 import java.time.Period
 
@@ -39,6 +42,17 @@ class RegisterActivity3 : AppCompatActivity() {
                 25f
         )
         UtilsFunctions.setViewWidthPercentageButton(buttonContinue, parentLayoutPrincipal, 65f)
+
+        val valueInDp =
+                TypedValue.applyDimension(
+                                TypedValue.COMPLEX_UNIT_DIP,
+                                0.91f,
+                                resources.displayMetrics
+                        )
+                        .toInt()
+        var background = textViewName.background as GradientDrawable
+        background.setStroke(valueInDp, Color.parseColor("#D7D7D7"))
+        textViewName.setTextColor(Color.parseColor("#939393"))
 
         buttonExit.setOnClickListener {
             val intent = Intent(this, RegisterActivity2::class.java)

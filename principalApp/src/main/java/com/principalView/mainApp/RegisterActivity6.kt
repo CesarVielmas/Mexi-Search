@@ -47,6 +47,25 @@ class RegisterActivity6 : AppCompatActivity() {
         val editTextUserRegister = findViewById<EditText>(R.id.editTextUserRegister)
         val textViewRegister = findViewById<TextView>(R.id.textViewRegister)
         val layoutRegister = findViewById<LinearLayout>(R.id.linearLayoutRegister)
+        val valueInDp =
+                TypedValue.applyDimension(
+                                TypedValue.COMPLEX_UNIT_DIP,
+                                0.91f,
+                                resources.displayMetrics
+                        )
+                        .toInt()
+        var background = textViewUserName.background as GradientDrawable
+        background.setStroke(valueInDp, Color.parseColor("#D7D7D7"))
+        textViewUserName.setTextColor(Color.parseColor("#939393"))
+        background = textViewBirthDate.background as GradientDrawable
+        background.setStroke(valueInDp, Color.parseColor("#D7D7D7"))
+        textViewBirthDate.setTextColor(Color.parseColor("#939393"))
+        background = textViewPassword.background as GradientDrawable
+        background.setStroke(valueInDp, Color.parseColor("#D7D7D7"))
+        textViewPassword.setTextColor(Color.parseColor("#939393"))
+        background = textViewRegister.background as GradientDrawable
+        background.setStroke(valueInDp, Color.parseColor("#D7D7D7"))
+        textViewRegister.setTextColor(Color.parseColor("#939393"))
 
         editTextUserName.setText(username)
         editTextBirthDate.setText(birthdate)
