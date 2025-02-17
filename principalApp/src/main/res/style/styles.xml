@@ -1,16 +1,15 @@
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-
-    </style>
-    <style name="AppThemeCalendar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="AppTheme"
+           parent="Theme.AppCompat.Light.DarkActionBar" />
+    <style name="AppThemeCalendar"
+           parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">#FFFFFF</item>
         <item name="colorPrimaryDark">#000000</item>
         <item name="colorAccent">#000000</item>
         <item name="materialCalendarTheme">@style/CustomMaterialDatePickerTheme</item>
     </style>
-    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light">
-    
-    </style>
+    <style name="AppTheme.NoActionBar"
+           parent="Theme.AppCompat.Light" />
     <style name="TittlePrincipal">
         <item name="android:textSize">22sp</item>
         <item name="android:textColor">#FFFFFF</item>
@@ -47,7 +46,7 @@
         <item name="android:padding">15dp</item>
         <!-- <item name="android:layout_weight">0.5</item> -->
         <!-- <item name="android:drawablePadding">10dp</item> -->
-         <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginTop">24dp</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">#000000</item>
         <item name="android:background">@drawable/edit_text_style</item>
@@ -82,7 +81,6 @@
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">#56688E</item>
         <item name="android:textStyle">normal</item>
-        
         <item name="android:fontFamily">@font/notosans_thin</item>
         <item name="android:gravity">center</item>
     </style>
@@ -94,12 +92,14 @@
         <item name="android:gravity">center</item>
     </style>
     <!-- Registro -->
-    <style name="TittleRegistro" parent="@style/TittlePrincipal">
+    <style name="TittleRegistro"
+           parent="@style/TittlePrincipal">
         <item name="android:textSize">28sp</item>
         <item name="android:gravity">start</item>
         <item name="android:layout_marginTop">22dp</item>
     </style>
-    <style name="TittleRegistro_cont" parent="@style/TittlePrincipal_cont">
+    <style name="TittleRegistro_cont"
+           parent="@style/TittlePrincipal_cont">
         <item name="android:textSize">20sp</item>
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:gravity">center</item>
@@ -113,17 +113,19 @@
         <item name="android:layout_marginEnd">3dp</item>
         <item name="android:layout_marginTop">40dp</item>
     </style>
-    <style name="PrincipalButtonSesionRegister" parent="PrincipalButtonSesion">
+    <style name="PrincipalButtonSesionRegister"
+           parent="PrincipalButtonSesion">
         <item name="android:textSize">17sp</item>
         <item name="android:layout_marginTop">5dp</item>
     </style>
-    <!-- Register Activity 3-->
-   <style name="CustomMaterialDatePickerTheme" parent="Theme.MaterialComponents.DayNight">
+    <!-- Register Activity 3 -->
+    <style name="CustomMaterialDatePickerTheme"
+           parent="Theme.MaterialComponents.DayNight">
         <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
         <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen</item>
         <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar</item>
     </style>
-    <!-- Register Activity 4-->
+    <!-- Register Activity 4 -->
     <style name="WarningPassword">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -136,7 +138,7 @@
         <item name="android:fontFamily">@font/notosans_thin</item>
         <item name="android:gravity">start</item>
     </style>
-    <!-- Register Activity 5-->
+    <!-- Register Activity 5 -->
     <style name="ChangePhone">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -148,7 +150,7 @@
         <item name="android:fontFamily">@font/notosans_medium</item>
         <item name="android:gravity">center</item>
     </style>
-    <!--Modal View 1-->
+    <!-- Modal View 1 -->
     <style name="LinearLayoutModal">
         <item name="android:orientation">vertical</item>
         <item name="android:layout_width">match_parent</item>

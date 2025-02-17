@@ -1,35 +1,33 @@
 package com.example.principalApp
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import android.util.TypedValue
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.LinearLayout
-import android.widget.FrameLayout
-import android.widget.Button
-import android.widget.ImageView
-import android.graphics.drawable.TransitionDrawable
-import androidx.core.content.ContextCompat
-import android.os.Handler
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
-import android.content.Intent
+import android.graphics.drawable.TransitionDrawable
+import android.os.Bundle
+import android.os.Handler
+import android.util.DisplayMetrics
+import android.util.TypedValue
+import android.widget.Button
+import android.widget.EditText
+import android.widget.FrameLayout
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import kotlin.io.println
 
-private val drawableIds = intArrayOf(
-    R.mipmap.gift1,
-    R.mipmap.gift2,
-    R.mipmap.gift3,
-    R.mipmap.gift4,
-    R.mipmap.gift5
-)
-private val textIds = arrayOf(
-    R.string.principal_tittle_login1,
-    R.string.principal_tittle_login2,
-    R.string.principal_tittle_login3,
-    R.string.principal_tittle_login4,
-    R.string.principal_tittle_login5
-)
+private val drawableIds =
+        intArrayOf(R.mipmap.gift1, R.mipmap.gift2, R.mipmap.gift3, R.mipmap.gift4, R.mipmap.gift5)
+private val textIds =
+        arrayOf(
+                R.string.principal_tittle_login1,
+                R.string.principal_tittle_login2,
+                R.string.principal_tittle_login3,
+                R.string.principal_tittle_login4,
+                R.string.principal_tittle_login5
+        )
 
 private var currentIndexText = 0
 private lateinit var textViewTittle: TextView
@@ -45,13 +43,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_main)
-
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+        val screenHeightTotal = displayMetrics.heightPixels
         textViewTittle = findViewById(R.id.textView1)
         imageAnimation = findViewById(R.id.backgroundAnimation)
         textHandler = Handler()
         imageHandler = Handler()
-
+        println("Screen Height: $screenHeightTotal")
         // Configuración de otros componentes
+        val imageLogo = findViewById<ImageView>(R.id.mi_imageview)
         val editText1 = findViewById<EditText>(R.id.inputText1)
         val editText2 = findViewById<EditText>(R.id.inputText2)
         val buttonSesion = findViewById<Button>(R.id.buttonView1)
@@ -59,17 +60,43 @@ class MainActivity : AppCompatActivity() {
         val textView1 = findViewById<TextView>(R.id.textView3)
         val textView2 = findViewById<TextView>(R.id.textView4)
         val textRegister = findViewById<TextView>(R.id.textView5)
+        val textSesion = findViewById<TextView>(R.id.textView1)
+        val textInitSesion = findViewById<TextView>(R.id.textView2)
         val parentLayout = findViewById<LinearLayout>(R.id.linearLayout2)
         val parentLayoutImages = findViewById<LinearLayout>(R.id.linearLayoutImages)
         val parentLayoutPrincipal = findViewById<LinearLayout>(R.id.linearLayoutPrincipalParent)
         val parentLayoutWave = findViewById<LinearLayout>(R.id.linearLayoutWave)
         val frameLayoutAnimation = findViewById<FrameLayout>(R.id.frameLayoutContainer)
-
-        textView1.translationY = 41f
+        imageLogo.translationY =
+                if (screenHeightTotal > 2500) 0f
+                else if (screenHeightTotal > 2000) 0f
+                else if (screenHeightTotal > 1500) 15f
+                else if (screenHeightTotal > 1000) 40f else 0f
+        textView1.translationY =
+                if (screenHeightTotal > 2500) 48f
+                else if (screenHeightTotal > 2000) 41f
+                else if (screenHeightTotal > 1500) 20f
+                else if (screenHeightTotal > 1000) 0f else 41f
         textView1.bringToFront()
-        textView2.translationY = 245f
+        textView2.translationY =
+                if (screenHeightTotal > 2500) 310f
+                else if (screenHeightTotal > 2000) 245f
+                else if (screenHeightTotal > 1500) 190f
+                else if (screenHeightTotal > 1000) 150f else 245f
         textView2.bringToFront()
-
+        val valueInDp =
+                TypedValue.applyDimension(
+                                TypedValue.COMPLEX_UNIT_DIP,
+                                0.91f,
+                                resources.displayMetrics
+                        )
+                        .toInt()
+        var background = textView1.background as GradientDrawable
+        background.setStroke(valueInDp, Color.parseColor("#D7D7D7"))
+        textView1.setTextColor(Color.parseColor("#939393"))
+        background = textView2.background as GradientDrawable
+        background.setStroke(valueInDp, Color.parseColor("#D7D7D7"))
+        textView2.setTextColor(Color.parseColor("#939393"))
         UtilsFunctions.setViewWidthPercentageLayout(parentLayoutImages, parentLayout, 70f)
         UtilsFunctions.setViewWidthPercentageButton(buttonSesion, parentLayout, 70f)
         UtilsFunctions.setViewWidthPercentageButton(buttonSesionGoogle, parentLayout, 70f)
@@ -77,15 +104,84 @@ class MainActivity : AppCompatActivity() {
         UtilsFunctions.setViewWidthPercentageEditText(editText2, parentLayout, 90f)
         UtilsFunctions.setViewWidthPercentageTextView(textView1, parentLayout, 42f)
         UtilsFunctions.setViewWidthPercentageTextView(textView2, parentLayout, 42f)
-        UtilsFunctions.setViewHeightPercentageLayout(parentLayoutWave, parentLayoutPrincipal, 44f)
-        UtilsFunctions.setViewHeightPercentageFrame(frameLayoutAnimation, parentLayoutPrincipal, 44f)
-
+        // Set Height Of Views
+        UtilsFunctions.setViewHeightPercentageButton(
+                buttonSesion,
+                parentLayout,
+                if (screenHeightTotal > 2000) 6f
+                else if (screenHeightTotal > 1500) 6.2f
+                else if (screenHeightTotal > 1000) 6.6f else 12f
+        )
+        UtilsFunctions.setViewHeightPercentageButton(
+                buttonSesionGoogle,
+                parentLayout,
+                if (screenHeightTotal > 2000) 6f
+                else if (screenHeightTotal > 1500) 6.2f
+                else if (screenHeightTotal > 1000) 7f else 12f
+        )
+        UtilsFunctions.setViewHeightPercentageImage(
+                imageLogo,
+                parentLayout,
+                if (screenHeightTotal > 2000) 32f
+                else if (screenHeightTotal > 1500) 27f
+                else if (screenHeightTotal > 1000) 27f else 35f
+        )
+        UtilsFunctions.setViewHeightPercentageLayout(
+                parentLayoutWave,
+                parentLayoutPrincipal,
+                if (screenHeightTotal > 2000) 44f
+                else if (screenHeightTotal > 1500) 35f
+                else if (screenHeightTotal > 1000) 37f else 44f
+        )
+        UtilsFunctions.setViewHeightPercentageFrame(
+                frameLayoutAnimation,
+                parentLayoutPrincipal,
+                if (screenHeightTotal > 2000) 44f
+                else if (screenHeightTotal > 1500) 35f
+                else if (screenHeightTotal > 1000) 37f else 10f
+        )
+        UtilsFunctions.setViewFontPercentageTextView(
+                textSesion,
+                parentLayout,
+                if (screenHeightTotal > 2000) 5f
+                else if (screenHeightTotal > 1500) 4f else if (screenHeightTotal > 1000) 4f else 10f
+        )
+        UtilsFunctions.setViewFontPercentageTextView(
+                textInitSesion,
+                parentLayout,
+                if (screenHeightTotal > 2000) 4.2f
+                else if (screenHeightTotal > 1500) 3.2f
+                else if (screenHeightTotal > 1000) 3.4f else 5f
+        )
+        UtilsFunctions.setViewFontPercentageTextView(
+                textView1,
+                parentLayout,
+                if (screenHeightTotal > 2000) 3f
+                else if (screenHeightTotal > 1500) 2.5f
+                else if (screenHeightTotal > 1000) 2.8f else 5f
+        )
+        UtilsFunctions.setViewFontPercentageTextView(
+                textView2,
+                parentLayout,
+                if (screenHeightTotal > 2000) 3f
+                else if (screenHeightTotal > 1500) 2.5f
+                else if (screenHeightTotal > 1000) 2.8f else 5f
+        )
+        UtilsFunctions.setViewFontPercentageTextView(
+                textRegister,
+                parentLayout,
+                if (screenHeightTotal > 2000) 3.5f
+                else if (screenHeightTotal > 1500) 2.5f
+                else if (screenHeightTotal > 1000) 3f else 5f
+        )
         editText1.setOnFocusChangeListener { _, hasFocus ->
-            val valueInDp = TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_DIP,
-                0.91f,
-                resources.displayMetrics
-            ).toInt()
+            val valueInDp =
+                    TypedValue.applyDimension(
+                                    TypedValue.COMPLEX_UNIT_DIP,
+                                    0.91f,
+                                    resources.displayMetrics
+                            )
+                            .toInt()
             val background = textView1.background as GradientDrawable
             if (hasFocus) {
                 background.setStroke(valueInDp, Color.parseColor("#576F92"))
@@ -96,11 +192,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
         editText2.setOnFocusChangeListener { _, hasFocus ->
-            val valueInDp = TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_DIP,
-                0.91f,
-                resources.displayMetrics
-            ).toInt()
+            val valueInDp =
+                    TypedValue.applyDimension(
+                                    TypedValue.COMPLEX_UNIT_DIP,
+                                    0.91f,
+                                    resources.displayMetrics
+                            )
+                            .toInt()
             val background = textView2.background as GradientDrawable
             if (hasFocus) {
                 background.setStroke(valueInDp, Color.parseColor("#576F92"))
@@ -114,7 +212,10 @@ class MainActivity : AppCompatActivity() {
         textRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-            overridePendingTransition(R.drawable.animate_activity_right, R.drawable.animate_activity_left)
+            overridePendingTransition(
+                    R.drawable.animate_activity_right,
+                    R.drawable.animate_activity_left
+            )
         }
     }
 
@@ -149,14 +250,13 @@ class MainActivity : AppCompatActivity() {
             val partialText = text.substring(0, index)
             textViewTittle.text = partialText
             val delay = 100L // Delay between each character typing
-            textHandler.postDelayed({
-                animateTyping(text, index + 1)
-            }, delay)
+            textHandler.postDelayed({ animateTyping(text, index + 1) }, delay)
         } else {
             // Text fully typed, wait before deleting
-            textHandler.postDelayed({
-                animateDeleting(text)
-            }, 3000L) // Wait 3 seconds before deleting
+            textHandler.postDelayed(
+                    { animateDeleting(text) },
+                    3000L
+            ) // Wait 3 seconds before deleting
         }
     }
 
@@ -169,35 +269,48 @@ class MainActivity : AppCompatActivity() {
             val partialText = text.substring(0, index)
             textViewTittle.text = partialText
             val delay = 100L // Delay between each character deletion
-            textHandler.postDelayed({
-                animateDeletingInternal(text, index - 1)
-            }, delay)
+            textHandler.postDelayed({ animateDeletingInternal(text, index - 1) }, delay)
         } else {
             // Text fully deleted, proceed to next text
             currentIndexText = (currentIndexText + 1) % textIds.size
-            textHandler.postDelayed({
-                animateText()
-            }, 2000L) // Wait 2 seconds before starting next text animation
+            textHandler.postDelayed(
+                    { animateText() },
+                    2000L
+            ) // Wait 2 seconds before starting next text animation
         }
     }
 
     private fun animateImages() {
         isImageAnimating = true
-        imageHandler.post(object : Runnable {
-            override fun run() {
-                val transitionDrawable = TransitionDrawable(
-                    arrayOf(
-                        ContextCompat.getDrawable(this@MainActivity, drawableIds[currentIndexText])!!,
-                        ContextCompat.getDrawable(this@MainActivity, drawableIds[(currentIndexText + 1) % drawableIds.size])!!
-                    )
-                )
-                imageAnimation.setImageDrawable(transitionDrawable)
-                transitionDrawable.startTransition(8000)
+        imageHandler.post(
+                object : Runnable {
+                    override fun run() {
+                        val transitionDrawable =
+                                TransitionDrawable(
+                                        arrayOf(
+                                                ContextCompat.getDrawable(
+                                                        this@MainActivity,
+                                                        drawableIds[currentIndexText]
+                                                )!!,
+                                                ContextCompat.getDrawable(
+                                                        this@MainActivity,
+                                                        drawableIds[
+                                                                (currentIndexText + 1) %
+                                                                        drawableIds.size]
+                                                )!!
+                                        )
+                                )
+                        imageAnimation.setImageDrawable(transitionDrawable)
+                        transitionDrawable.startTransition(8000)
 
-                currentIndexText = (currentIndexText + 1) % drawableIds.size
+                        currentIndexText = (currentIndexText + 1) % drawableIds.size
 
-                imageHandler.postDelayed(this, 6000L) // Wait 6 seconds before next image animation
-            }
-        })
+                        imageHandler.postDelayed(
+                                this,
+                                6000L
+                        ) // Wait 6 seconds before next image animation
+                    }
+                }
+        )
     }
 }
