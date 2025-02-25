@@ -8,8 +8,10 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.ui.platform.ComposeView
 
 object UtilsFunctions {
     fun getScreenWidth(context: Context): Int {
@@ -136,6 +138,29 @@ object UtilsFunctions {
 
     fun setViewHeightPercentageFrame(
             view: FrameLayout,
+            parentLayout: LinearLayout,
+            percentage: Float
+    ) {
+        val screenHeight = getScreenHeight(view.context)
+        val heightInPx = (screenHeight * (percentage / 100)).toInt()
+        val heightInDp = convertPixelsToDp(heightInPx.toFloat(), view.context)
+        val params = view.layoutParams
+        params.height = heightInPx
+        view.layoutParams = params
+    }
+    fun setViewHeightPercentageComposeView(
+            view: ComposeView,
+            parentLayout: LinearLayout,
+            percentage: Float
+    ) {
+        val screenHeight = getScreenHeight(view.context)
+        val heightInPx = (screenHeight * (percentage / 100)).toInt()
+        val params = view.layoutParams
+        params.height = heightInPx
+        view.layoutParams = params
+    }
+    fun setViewHeightPercentageRelativeLayout(
+            view: RelativeLayout,
             parentLayout: LinearLayout,
             percentage: Float
     ) {
